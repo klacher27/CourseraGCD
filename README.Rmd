@@ -1,0 +1,93 @@
+---
+title: "Readme"
+author: "Karl Lacher"
+date: "July 25, 2015"
+output: html_document
+---
+
+# Purpose of r_analysis.R script
+The R script downloads a zip file containing raw signal data captured from the accelerometer and gyroscope of mobile cellular devices and produces two wide tidy data sets:
+
+1. RawSignals.txt
+2. MeanOfSignals.txt
+
+RawSignals.txt contains 10,299 observations of 81 variables.
+MeanOfSignals.txt contains 180 observations of 81 variables and is derived from tidy data set 1 by applying the mean function to all the variables and grouping by subject and activity
+
+These wide tidy data sets can be read into data frames using the following two commands:
+
+1. RawSignals <- read.table("RawSignals.txt", header = TRUE)
+2. MeansOfSignals <- read.table("MeanOfSignals.txt", header = TRUE)
+
+These tidy data sets contain measures concerned with mean and standard deviation measurements. This data set excludes the angle() variables because they are calculating the angular velocity between two vectors and are not mean or standard deviation calculations themselves.
+
+The original experiment concerned recognizing human activity using smartphones. The README.txt and features_info.txt files extracted from the raw data set go into much more detail regarding the experiment and the captured raw signal data. I will not reproduce that information here.
+
+# Acknowledgements
+## Raw Data Set Title:   
+     Human Activity Recognition Using Smartphones Dataset   
+     Version 1.0   
+
+## Raw Data Set Source:   
+     Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.   
+     Smartlab - Non Linear Complex Systems Laboratory   
+     DITEN - Universit‡ degli Studi di Genova.   
+     Via Opera Pia 11A, I-16145, Genoa, Italy.   
+     activityrecognition@smartlab.ws   
+     www.smartlab.ws   
+
+# Files in repository:
+1. README.txt - this file
+2. run_analysis.R - script that downloads the raw dataset zip file UCS_HAR_Dataset.zip and produces 2 tidy data sets
+3. RawSignals.txt - 1st wide tidy data set comprising 10,299 observations of 81 variables
+4. MeanOfSignals.txt - 2nd wide tidy data set comprising 180 observations of 81 variables
+5. UCI_HAR_Dataset.zip - this is the original zipped data set containing the following:  
+     + README.txt - readme for the original raw data set   
+     + features_info.txt - Explains the methodology and how the dataset was produced   
+     + features.txt - Lists all 561 variables in the original raw data set   
+     + activity_labels.txt - contains the 6 activity codes and their descriptions   
+     + test & train folders - each contains 3 text files and 1 folder   
+
+# System Used
+The script, run_analysis.R, was developed and executed on an iMac running OSX Yosemite.
+
+# Required packages:
+These libraries are loaded by the script and are assumed to be available for data frame manipulation:   
+
+1. dplyr   
+2. plyr   
+ 
+If necessary, install these packages before running the script using the following R commands:   
+
+1. install.packages("dplyr")   
+2. install.packages("plyr") 
+
+The script does not install the packages, it simply loads them so they are available for use.
+
+# Processing steps in script
+The script reassembles the raw data and extracts only those signals pertaining to mean and standard deviation measures. There are 561 variables in all, but only 81 concern mean and standard deviation measures.   
+
+1.Download the data set from the Source data URL to the R working directory.   
+2. Extract the individual components of the raw data set.   
+3. Read the test set data.   
+4. Read the training set data.   
+5. Rename the columns in the subject_test and subject_train datasets.   
+6. Match the activity codes with the activity descriptions and save in new data frames y_test1 and y_train1, then rename the V2 column to "activity".   
+7. Create index vectors of the combined column names desired from the measures data set. These are the indices of the variable names to keep from raw_var_List, not the actual names.   
+8. Compute a vector of the mean measure names for the tidy data set.   
+9. Compute a vector of the standard deviation measure names for the tidy data set.   
+10. Column bind the measure names vectors together to form a measure names data frame.   
+11. Rename the measure name columns in the measure names data frame.   
+12. Make user friendly measure names by eliminating non-alphanumeric characters, specifically parentheses and hyphens.   
+13. Add the new measure names to the measure list data frame.   
+14. Get the test measures of interest from the raw data frames.   
+15. Get the training measures of interest from the raw data frames.   
+16. Rename the measure variables in the test and training data sets with the user friendly names.    
+17. Column bind the subject_, X_, and y_ data frames in the respective test and training data sets. A single data frame can be produced for each.    
+18.Row bind the two resulting data frames results in a ingle consolidated data frame.   
+19. Add the subject and activity to the test and training measure data sets.   
+20. Combine the test and training datasets and sort the rows.   
+21. Write the tidy data set of raw signal measures to a tab delimited text file.   
+22. Compute the mean of each measure variable by subject and activity.   
+23. Write the aggregated set of means to the MeanOfSignals tab delimited text file.   
+

@@ -1,0 +1,102 @@
+---
+title: Codebook for Course Project - Getting and Cleaning Data
+author: Karl Lacher
+date: July 25, 2015
+output: html_document
+---
+
+This codebook applies to both of the wide tidy dataset files. The order of the variables
+in the table below reflects the order of the variables in the two tidy dataset files:   
+
+1. RawSignals.txt
+2. MeanOfSignals.txt
+
+RawSignals.txt contains all the merged raw data from both the test and training datasets for the
+mean and standard deviation measures.
+
+MeanOfSignals.txt contains the mean of the variables from the RawSignals.txt file summarized by subject and activity.
+
+The tidy dataset variable names are listed along with the original raw dataset variable names. 
+
+Raw dataset variable name       | Tidy dataset variable name    | Values
+--------------------------------|-------------------------------|-------------------------------------------------------------------------
+subject                         | subject                       | Integers 1 through 30
+activity                        | activity                      | LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS
+tBodyAcc-mean()-X               | tBodyAccmeanX                 | Real numbers between -1.0 and +1.0
+tBodyAcc-mean()-Y               | tBodyAccmeanY                 | Real numbers between -1.0 and +1.0
+tBodyAcc-mean()-Z               | tBodyAccmeanZ                 | Real numbers between -1.0 and +1.0
+tBodyAcc-std()-X                | tBodyAccstdX                  | Real numbers between -1.0 and +1.0
+tBodyAcc-std()-Y                | tBodyAccstdY                  | Real numbers between -1.0 and +1.0
+tBodyAcc-std()-Z                | tBodyAccstdZ                  | Real numbers between -1.0 and +1.0
+tGravityAcc-mean()-X            | tGravityAccmeanX              | Real numbers between -1.0 and +1.0
+tGravityAcc-mean()-Y            | tGravityAccmeanY              | Real numbers between -1.0 and +1.0
+tGravityAcc-mean()-Z            | tGravityAccmeanZ              | Real numbers between -1.0 and +1.0
+tGravityAcc-std()-X             | tGravityAccstdX               | Real numbers between -1.0 and +1.0
+tGravityAcc-std()-Y             | tGravityAccstdY               | Real numbers between -1.0 and +1.0
+tGravityAcc-std()-Z             | tGravityAccstdZ               | Real numbers between -1.0 and +1.0
+tBodyAccJerk-mean()-X           | tBodyAccJerkmeanX             | Real numbers between -1.0 and +1.0
+tBodyAccJerk-mean()-Y           | tBodyAccJerkmeanY             | Real numbers between -1.0 and +1.0
+tBodyAccJerk-mean()-Z           | tBodyAccJerkstdX              | Real numbers between -1.0 and +1.0
+tBodyAccJerk-std()-Y            | tBodyAccJerkstdY              | Real numbers between -1.0 and +1.0
+tBodyAccJerk-std()-Z            | tBodyAccJerkstdZ              | Real numbers between -1.0 and +1.0
+tBodyGyro-mean()-X              | tBodyGyromeanX                | Real numbers between -1.0 and +1.0
+tBodyGyro-mean()-Y              | tBodyGyromeanY                | Real numbers between -1.0 and +1.0
+tBodyGyro-mean()-Z              | tBodyGyromeanZ                | Real numbers between -1.0 and +1.0
+tBodyGyro-std()-X               | tBodyGyrostdX                 | Real numbers between -1.0 and +1.0
+tBodyGyro-std()-Y               | tBodyGyrostdY                 | Real numbers between -1.0 and +1.0
+tBodyGyro-std()-Z               | tBodyGyrostdZ                 | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-mean()-X          | tBodyGyroJerkmeanX            | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-mean()-Y          | tBodyGyroJerkmeanY            | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-mean()-Z          | tBodyGyroJerkmeanZ            | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-std()-X           | tBodyGyroJerkstdX             | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-std()-Y           | tBodyGyroJerkstdY             | Real numbers between -1.0 and +1.0
+tBodyGyroJerk-std()-Z           | tBodyGyroJerkstdZ             | Real numbers between -1.0 and +1.0
+tBodyAccMag-mean()              | tBodyAccMagmean               | Real numbers between -1.0 and +1.0
+tBodyAccMag-std()               | tBodyAccMagstd                | Real numbers between -1.0 and +1.0
+tGravityAccMag-mean()           | tGravityAccMagmean            | Real numbers between -1.0 and +1.0
+tGravityAccMag-std()            | tGravityAccMagstd             | Real numbers between -1.0 and +1.0
+tBodyAccJerkMag-mean()          | tBodyAccJerkMagmean           | Real numbers between -1.0 and +1.0
+tBodyAccJerkMag-std()           | tBodyAccJerkMagstd            | Real numbers between -1.0 and +1.0
+tBodyGyroMag-mean()             | tBodyGyroMagmean              | Real numbers between -1.0 and +1.0
+tBodyGyroMag-std()              | tBodyGyroMagstd               | Real numbers between -1.0 and +1.0
+tBodyGyroJerkMag-mean()         | tBodyGyroJerkMagmean          | Real numbers between -1.0 and +1.0
+tBodyGyroJerkMag-std()          | tBodyGyroJerkMagstd           | Real numbers between -1.0 and +1.0
+fBodyAcc-mean()-X               | fBodyAccmeanX                 | Real numbers between -1.0 and +1.0
+fBodyAcc-mean()-Y               | fBodyAccmeanY                 | Real numbers between -1.0 and +1.0
+fBodyAcc-mean()-Z               | fBodyAccmeanZ                 | Real numbers between -1.0 and +1.0
+fBodyAcc-std()-X                | fBodyAccstdX                  | Real numbers between -1.0 and +1.0
+fBodyAcc-std()-Y                | fBodyAccstdY                  | Real numbers between -1.0 and +1.0
+fBodyAcc-std()-Z                | fBodyAccstdZ                  | Real numbers between -1.0 and +1.0
+fBodyAcc-meanFreq()-X           | fBodyAccmeanFreqX             | Real numbers between -1.0 and +1.0
+fBodyAcc-meanFreq()-Y           | fBodyAccmeanFreqY             | Real numbers between -1.0 and +1.0
+fBodyAcc-meanFreq()-Z           | fBodyAccmeanFreqZ             | Real numbers between -1.0 and +1.0
+fBodyAccJerk-mean()-X           | fBodyAccJerkmeanX             | Real numbers between -1.0 and +1.0
+fBodyAccJerk-mean()-Y           | fBodyAccJerkmeanY             | Real numbers between -1.0 and +1.0
+fBodyAccJerk-mean()-Z           | fBodyAccJerkmeanZ             | Real numbers between -1.0 and +1.0
+fBodyAccJerk-std()-X            | fBodyAccJerkstdX              | Real numbers between -1.0 and +1.0
+fBodyAccJerk-std()-Y            | fBodyAccJerkstdY              | Real numbers between -1.0 and +1.0
+fBodyAccJerk-std()-Z            | fBodyAccJerkstdZ              | Real numbers between -1.0 and +1.0
+fBodyAccJerk-meanFreq()-X       | fBodyAccJerkmeanFreqX         | Real numbers between -1.0 and +1.0
+fBodyAccJerk-meanFreq()-Y       | fBodyAccJerkmeanFreqY         | Real numbers between -1.0 and +1.0
+fBodyAccJerk-meanFreq()-Z       | fBodyAccJerkmeanFreqZ         | Real numbers between -1.0 and +1.0
+fBodyGyro-mean()-X              | fBodyGyromeanX                | Real numbers between -1.0 and +1.0
+fBodyGyro-mean()-Y              | fBodyGyromeanY                | Real numbers between -1.0 and +1.0
+fBodyGyro-mean()-Z              | fBodyGyromeanZ                | Real numbers between -1.0 and +1.0
+fBodyGyro-std()-X               | fBodyGyrostdX                 | Real numbers between -1.0 and +1.0
+fBodyGyro-std()-Y               | fBodyGyrostdY                 | Real numbers between -1.0 and +1.0
+fBodyGyro-std()-Z               | fBodyGyrostdZ                 | Real numbers between -1.0 and +1.0
+fBodyGyro-meanFreq()-X          | fBodyGyromeanFreqX            | Real numbers between -1.0 and +1.0
+fBodyGyro-meanFreq()-Y          | fBodyGyromeanFreqY            | Real numbers between -1.0 and +1.0
+fBodyGyro-meanFreq()-Z          | fBodyGyromeanFreqZ            | Real numbers between -1.0 and +1.0
+fBodyAccMag-mean()              | fBodyAccMagmean               | Real numbers between -1.0 and +1.0
+fBodyAccMag-std()               | fBodyAccMagstd                | Real numbers between -1.0 and +1.0
+fBodyAccMag-meanFreq()          | fBodyAccMagmeanFreq           | Real numbers between -1.0 and +1.0
+fBodyBodyAccJerkMag-mean()      | fBodyBodyAccJerkMagmean       | Real numbers between -1.0 and +1.0
+fBodyBodyAccJerkMag-std()       | fBodyBodyAccJerkMagstd        | Real numbers between -1.0 and +1.0
+fBodyBodyAccJerkMag-meanFreq()  | fBodyBodyAccJerkMagmeanFreq   | Real numbers between -1.0 and +1.0
+fBodyBodyGyroMag-mean()         | fBodyBodyGyroMagmean          | Real numbers between -1.0 and +1.0
+fBodyBodyGyroMag-std()          | fBodyBodyGyroMagstd           | Real numbers between -1.0 and +1.0
+fBodyBodyGyroMag-meanFreq()     | fBodyBodyGyroMagmeanFreq      | Real numbers between -1.0 and +1.0
+fBodyBodyGyroJerkMag-mean()     | fBodyBodyGyroJerkMagmean      | Real numbers between -1.0 and +1.0
+fBodyBodyGyroJerkMag-std()      | fBodyBodyGyroJerkMagstd       | Real numbers between -1.0 and +1.0
+fBodyBodyGyroJerkMag-meanFreq() | fBodyBodyGyroJerkMagmeanFreq  | Real numbers between -1.0 and +1.0
